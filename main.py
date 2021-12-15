@@ -86,7 +86,6 @@ class API_Documentation():
         obj_name = get_tag_text('h1', obj)
         _class = render_template('class.py', CLASS_NAME=obj_name)
 
-
         string_object += _class
         for method in self.split_obj_by_methods(obj):
             _method = self.stringify_method(method)
@@ -98,7 +97,7 @@ class API_Documentation():
 
     def dump(self):
         print('Creating package ...')
-        os.mkdir('ZAPI')
+        os.mkdir('zapy')
 
         # Create API object
 
@@ -117,8 +116,8 @@ class API_Documentation():
 
         print(f'Creating {colored("API class", "green")} ...')
         API_class_string = render_template('api_class.py',
-                                           IMPORTS_LIST='\n'.join(list(map(lambda x: f'ZAPI.{x}', objects))),
-                                           API_CLASSES='\n\t'.join(list(map(lambda x: f'self.{x} = ZAPI.{x}', objects))))
+                                           IMPORTS_LIST='\n'.join(list(map(lambda x: f'zapy.{x}', objects))),
+                                           API_CLASSES='\n\t'.join(list(map(lambda x: f'self.{x} = zapy.{x}', objects))))
         open(f'{self.base_dir}/API.py', 'w').write(API_class_string)
 
 
