@@ -1,7 +1,8 @@
 from setuptools import find_packages, setup
-
+import os
 
 os.system('python3 main.py')
+
 setup(name='zapy',
       version='0.0.0',
       description='OWASP ZAP Proxy API python package',
