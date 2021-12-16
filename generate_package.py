@@ -98,7 +98,7 @@ class API_Documentation():
     def dump(self):
         print('Creating package ...')
         if 'zapy' in os.listdir():
-            os.rmdir('zapy')
+            os.system('rm -rf zapy')
         os.mkdir('zapy')
 
         # Create API object
