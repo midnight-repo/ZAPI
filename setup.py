@@ -11,5 +11,5 @@ setup(name='zapy',
       license='GPL-3.0',
       url='https://github.com/midnight-repo/ZAPY',
       packages=find_packages(),
-      install_requires = ['beautifulsoup4', 'pandas', 'termcolor', 'requests']
+      install_requires = ['beautifulsoup4', 'pandas', 'termcolor', 'requests', 'reindent']
       )
