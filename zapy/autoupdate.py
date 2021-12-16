@@ -121,6 +121,15 @@ class autoupdate():
         #return r.json
         return json.loads(r.text)
 
+    def autoupdateViewOptionCheckOnStart(self):
+
+        r = self.API.HTTP.get(
+            f'{self.API.url}/JSON/autoupdate/view/optionCheckOnStart/',
+        )
+
+        #return r.json
+        return json.loads(r.text)
+
     def autoupdateViewOptionDownloadNewRelease(self):
 
         r = self.API.HTTP.get(
