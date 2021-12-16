@@ -4,7 +4,7 @@ import os
 
 
 setup(name='zapy',
-      version='0.0.7',
+      version='0.0.8',
       description='OWASP ZAP Proxy API python package',
       author='midnight_repo',
       author_email='midnight_repo@protonmail.com',
