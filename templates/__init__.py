@@ -1,1 +1,1 @@
-from ZAPI import *
+from zapy import *

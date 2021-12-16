@@ -122,6 +122,8 @@ class API_Documentation():
                                            API_CLASSES='\n\t'.join(list(map(lambda x: f'self.{x} = zapy.{x}', objects))))
         open(f'{self.base_dir}/API.py', 'w').write(API_class_string)
 
+        open(f'{self.base_dir}/__init__.py', 'w').write()
+
 
         print('Finalizing ...')
         os.system(f'reindent -n {self.base_dir}/API.py')
