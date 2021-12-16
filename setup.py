@@ -1,10 +1,10 @@
 from setuptools import find_packages, setup
 import os
 
-os.system('python3 main.py')
+
 
 setup(name='zapy',
-      version='0.0.4',
+      version='0.0.3',
       description='OWASP ZAP Proxy API python package',
       author='midnight_repo',
       author_email='midnight_repo@protonmail.com',
