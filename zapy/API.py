@@ -31,7 +31,6 @@ class API():
         self.forcedUser = zapy.forcedUser
         self.script = zapy.script
         self.stats = zapy.stats
-        self.Schemas = zapy.Schemas
 
     def close(self):
         self.HTTP.close()

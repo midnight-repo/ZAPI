@@ -1,1 +1,1 @@
-{{IMPORTS}}
+from zapy import *
