@@ -119,10 +119,11 @@ class API_Documentation():
         print(f'Creating {colored("API class", "green")} ...')
         API_class_string = render_template('api_class.py',
                                            IMPORTS_LIST='\n'.join(list(map(lambda x: f'zapy.{x}', objects))),
-                                           API_CLASSES='\n\t'.join(list(map(lambda x: f'self.{x} = zapy.{x}', objects))))
+                                           API_CLASSES='\n\t'.join(list(map(lambda x: f'self.{x} = zapy.{x}.{x}(self)', objects))))
         open(f'{self.base_dir}/API.py', 'w').write(API_class_string)
 
-
+        objects.remove('break')
+        objects.append('Break')
         init_imports = '\n'.join(list(map(lambda x: f'import zapy.{x}', objects)))
         open(f'{self.base_dir}/__init__.py', 'w').write(render_template('__init__.py', IMPORTS=init_imports))
 

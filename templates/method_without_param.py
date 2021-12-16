@@ -4,4 +4,5 @@
             f'{self.API.url}{{ API_PATH }}',
         )
 
-        return r.json
+        #return r.json
+        return json.loads(r.text)
