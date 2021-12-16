@@ -44,7 +44,7 @@ def split_html(tag, html):
 
 class API_Documentation():
     def __init__(self):
-        self.base_dir = os.getcwd() + '/ZAPI'
+        self.base_dir = os.getcwd() + '/zapy'
         print('Fetching documentation ...')
         self.source = requests.get('https://www.zaproxy.org/docs/api/').text
 
