@@ -27,7 +27,7 @@ jobs:
       run: |
         python main.py
         python -m pip install --upgrade pip
-        pip install build
+        pip install build beautifulsoup4 requests pandas termcolor
     - name: Build package
       run: python -m build
     - name: Publish package
