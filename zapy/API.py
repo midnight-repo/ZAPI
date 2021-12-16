@@ -1,5 +1,5 @@
 import requests
-import ZAPI
+import zapy
 
 class API():
     def __init__(self, url, api_key):
