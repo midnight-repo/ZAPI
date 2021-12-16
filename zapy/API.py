@@ -1,6 +1,7 @@
 import requests
 import zapy
 
+
 class API():
     def __init__(self, url, api_key):
         self.api_key = api_key
