@@ -49,7 +49,7 @@ class API_Documentation():
         self.source = requests.get('https://www.zaproxy.org/docs/api/').text
 
     def split_source_by_obj(self):
-        s = [x for x in split_html('h1', self.source) if '<code>' in x and '<table>' in x][1:]
+        s = [x for x in split_html('h1', self.source) if '<code>' in x and '<table>' in x][1:-1]
         return s
 
     def split_obj_by_methods(self, obj):
@@ -122,7 +122,9 @@ class API_Documentation():
                                            API_CLASSES='\n\t'.join(list(map(lambda x: f'self.{x} = zapy.{x}', objects))))
         open(f'{self.base_dir}/API.py', 'w').write(API_class_string)
 
-        open(f'{self.base_dir}/__init__.py', 'w').write(render_template('__init__.py'))
+
+        init_imports = '\n'.join(list(map(lambda x: f'import zapy.{x}', objects)))
+        open(f'{self.base_dir}/__init__.py', 'w').write(render_template('__init__.py', IMPORTS=init_imports))
 
 
         print('Finalizing ...')
