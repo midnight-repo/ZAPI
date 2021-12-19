@@ -36,5 +36,5 @@ class API():
 
     def close(self):
         self.HTTP.close()
-    def read_key_from_fs(self):
+    def read_key_from_fs():
         return re.search('<key>(\w+)</key>', open(f'{Path.home()}/.ZAP/config.xml').read())[1]
