@@ -1,4 +1,6 @@
 import requests
+import re
+from pathlib import Path
 import zapy
 
 class API():
@@ -14,3 +16,6 @@ class API():
 
     def close(self):
         self.HTTP.close()
+    def read_key_from_fs(self):
+        return re.search('<key>(\w+)</key>', open(f'{Path.home()}/.ZAP/config.xml').read())[1]
+
